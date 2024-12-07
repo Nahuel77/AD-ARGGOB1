@@ -1,9 +1,10 @@
 import pandas as pd
 
-def data_process(data):
+def data_process_xyears(data):
     df = pd.DataFrame(data)
-    #df_data = pd.json_normalize(df['data'])
-    #df = pd.concat([df, df_data], axis=1)
-    num_reg = df.shape[0]
-    print(num_reg)
-    return df
+    years = []
+    for i in range(9):
+        filter_xyears = df.loc[df["fiscal_year"] == (2017+i)]
+        num_reg = filter_xyears.shape[0]
+        years.append(num_reg)
+    return years

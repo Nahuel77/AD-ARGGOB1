@@ -22,4 +22,5 @@ def get_data():
                 print(f"Advertencia: no se encontró 'data' en la respuesta de {url}")
         except requests.RequestException as e:
             print(f'Error: {e}')
+    print(f"Total de registros obtenidos: {len(all_data)}")
     return all_data
