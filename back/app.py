@@ -2,7 +2,6 @@ from flask import Flask, jsonify
 from flask_cors import CORS
 from app.scripts.dataAPI import get_data
 from app.scripts.data_process import data_process_xyears
-#import time
 
 app = Flask(__name__)
 CORS(app)
@@ -10,9 +9,8 @@ CORS(app)
 @app.route('/dataGET', methods=['GET'])
 def dataPOST():
     raw_data = get_data()
-    #time.sleep(3)
     df_process = data_process_xyears(raw_data)
-    print(df_process)
+    #print(df_process)
     return jsonify(df_process)
 
 if __name__ == '__main__':

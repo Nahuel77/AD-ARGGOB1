@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import PieChart from './components/PieCharts';
+import { YearData } from './types';
 
 function App() {
-  const [resultado, setResultado] = useState<number[] | null>(null);
+  const [resultado, setResultado] = useState<YearData[] | null>(null);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -30,14 +31,21 @@ function App() {
   return (
     <>
       <div>
-      <h1>Mi Aplicación con Gráfico de Tortas</h1>
-      {/* Verificamos si 'resultado' es un arreglo y tiene elementos */}
-      {resultado && Array.isArray(resultado) && resultado.length > 0 ? (
-        <PieChart data={resultado} />
-      ) : (
-        <p>Cargando datos...</p>
-      )}
-    </div>
+        <h1>Financiamiento de proyectos en Argentina</h1>
+        <h2>inversión de IDA/IBRD y Fondos Fiduciarios relacionados</h2>
+        { }
+        {resultado && resultado.length > 0 ? (
+          <PieChart
+            data={resultado.map((item) => ({
+              name: item.fiscal_year.toString(),
+              value: item.num_reg,
+            }))}
+            description= "Cantidad de proyectos asignados por año"
+          />
+        ) : (
+          <p>Cargando datos...</p>
+        )}
+      </div>
     </>
   )
 }

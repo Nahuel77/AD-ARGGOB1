@@ -1,5 +1,5 @@
 # AD-ARGGOB1
-Análisis de datos sobre la adjudicación de Ccntratos en financiamiento de proyectos de inversión - Proyectos en Argentina
+Análisis de datos sobre la adjudicación de Contratos en financiamiento de proyectos de inversión - Proyectos en Argentina
 
 Proposito general: Mostrar un analisis de datos, realizando diferentes tecnologías.
 
