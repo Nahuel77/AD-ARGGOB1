@@ -16,3 +16,4 @@ Tecnologías usadas:
 * Front
   - Node
     + Vite
+    + PieChart

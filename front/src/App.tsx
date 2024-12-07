@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import PieChart from './components/PieCharts';
-import { YearData } from './types';
+import { YearData, FundsData } from './types';
 
 function App() {
-  const [resultado, setResultado] = useState<YearData[] | null>(null);
+  const [projects, setResultado] = useState<YearData[] | null>(null);
+  const [funds, setFunds] = useState<FundsData[] | null>(null);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -20,7 +22,8 @@ function App() {
         }
 
         const result = await response.json();
-        setResultado(result);
+        setResultado(result.projects);
+        setFunds(result.funds);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -33,15 +36,28 @@ function App() {
       <div>
         <h1>Financiamiento de proyectos en Argentina</h1>
         <h2>inversión de IDA/IBRD y Fondos Fiduciarios relacionados</h2>
-        { }
-        {resultado && resultado.length > 0 ? (
+        {projects && projects.length > 0 ? (
+          <>
+            <PieChart
+              data={projects.map((item) => ({
+                name: item.fiscal_year.toString(),
+                value: item.num_reg,
+              }))}
+              description="Cantidad de proyectos asignados por año"
+            />
+          </>
+        ) : (
+          <p>Cargando datos...</p>
+        )}
+        {funds && funds.length > 0 ? (
           <PieChart
-            data={resultado.map((item) => ({
+            data={funds.map((item) => ({
               name: item.fiscal_year.toString(),
-              value: item.num_reg,
-            }))}
-            description= "Cantidad de proyectos asignados por año"
-          />
+              value: item.supplier_contract_amount_usd,
+            }))
+
+            }
+            description='Fondos recibidos por año (expresados en Usd)' />
         ) : (
           <p>Cargando datos...</p>
         )}
