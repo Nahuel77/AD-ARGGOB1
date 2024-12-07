@@ -15,5 +15,5 @@ Tecnologías usadas:
     + Pandas
 * Front
   - Node
-    + Vite
+    + Vite + React
     + PieChart
