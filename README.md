@@ -17,3 +17,77 @@ Tecnologías usadas:
   - Node
     + Vite + React
     + PieChart
+
+```tsx
+import { useState, useEffect } from 'react';
+import './App.css';
+import PieChart from './components/PieCharts';
+import BarChart from './components/BarCharts'; // Si tienes un componente de BarChart
+import { YearData, FundsData } from './types';
+
+function App() {
+  const [projects, setProjects] = useState<YearData[] | null>(null);
+  const [funds, setFunds] = useState<FundsData[] | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/dataGET', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error('Error en la solicitud de datos');
+        }
+
+        const result = await response.json();
+        setProjects(result.df_project_year);  // Asume que el backend devuelve estos campos
+        setFunds(result.df_founds_year);      // Similar para los fondos
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+      <div style={{ margin: '0 20px' }}>
+        <h1>Financiamiento de proyectos en Argentina</h1>
+        <h2>Inversión de IDA/IBRD y Fondos Fiduciarios relacionados</h2>
+        
+        {projects && projects.length > 0 ? (
+          <PieChart
+            data={projects.map((item) => ({
+              name: item.fiscal_year.toString(),
+              value: item.num_reg,
+            }))}
+            description="Cantidad de proyectos asignados por año"
+          />
+        ) : (
+          <p>Cargando datos...</p>
+        )}
+      </div>
+
+      <div style={{ margin: '0 20px' }}>
+        {funds && funds.length > 0 ? (
+          <BarChart
+            data={funds.map((item) => ({
+              name: item.fiscal_year.toString(),
+              value: item.supplier_contract_amount_usd,
+            }))}
+            description="Fondos recibidos por año (expresados en USD)"
+          />
+        ) : (
+          <p>Cargando datos...</p>
+        )}
+      </div>
+    </div>
+  );
+}
+
+export default App;```
