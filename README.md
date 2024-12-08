@@ -16,4 +16,4 @@ Tecnologías usadas:
 * Front
   - Node
     + Vite + React
-    + PieChart
+    + Rechart ( PieChart, BarChart )
