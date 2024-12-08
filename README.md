@@ -7,6 +7,10 @@ Este conjunto de adjudicaciones de contratos incluye datos sobre compromisos vin
 
 API consumida para la obtención de datos: https://financesone.worldbank.org/api-explorer?id=DS01129
 
+<h4>Dos de los graficos en ejemplificación</h4>
+   
+![image](https://github.com/user-attachments/assets/e3912494-7f40-45b1-9c22-10b8f9e6745f)
+
 Tecnologías usadas:
 
 * Back
@@ -15,10 +19,7 @@ Tecnologías usadas:
     + Pandas
 * Front
   - Node
-    + Vite + React (TypeScript)
+    + Vite + React ( TypeScript )
     + Rechart ( PieChart, BarChart )
-   
-Dos de los graficos en ejemplificación
-   
-![image](https://github.com/user-attachments/assets/e3912494-7f40-45b1-9c22-10b8f9e6745f)
+
 
