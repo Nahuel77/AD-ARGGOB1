@@ -17,3 +17,8 @@ Tecnologías usadas:
   - Node
     + Vite + React
     + Rechart ( PieChart, BarChart )
+   
+Dos de los graficos en ejemplificación
+   
+![image](https://github.com/user-attachments/assets/e3912494-7f40-45b1-9c22-10b8f9e6745f)
+
