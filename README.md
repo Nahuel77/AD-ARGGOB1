@@ -15,7 +15,7 @@ Tecnologías usadas:
     + Pandas
 * Front
   - Node
-    + Vite + React
+    + Vite + React (TypeScript)
     + Rechart ( PieChart, BarChart )
    
 Dos de los graficos en ejemplificación
