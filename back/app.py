@@ -3,7 +3,7 @@ from flask_cors import CORS
 from app.scripts.dataAPI import get_data
 from app.scripts.data_process import data_project_year, data_funds_year, data_practice_cate, data_practice_funds
 
-app = Flask(__name__)
+app=Flask(__name__)
 CORS(app)
 
 @app.route('/dataGET', methods=['GET'])
