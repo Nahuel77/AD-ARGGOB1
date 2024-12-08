@@ -1,5 +1,5 @@
 # AD-ARGGOB1
-Análisis de datos sobre la adjudicación de Contratos en financiamiento de proyectos de inversión - Proyectos en Argentina
+<h1>Análisis de datos sobre la adjudicación de Contratos en financiamiento de proyectos de inversión - Proyectos en Argentina</h1>
 
 Proposito general: Mostrar un analisis de datos, realizando diferentes tecnologías.
 
@@ -7,7 +7,7 @@ Este conjunto de adjudicaciones de contratos incluye datos sobre compromisos vin
 
 API consumida para la obtención de datos: https://financesone.worldbank.org/api-explorer?id=DS01129
 
-<h4>Dos de los graficos en ejemplificación</h3>
+<h3>Dos de los graficos en ejemplificación</h3>
    
 ![image](https://github.com/user-attachments/assets/e3912494-7f40-45b1-9c22-10b8f9e6745f)
 
