@@ -22,4 +22,4 @@ Tecnologías usadas:
     + Vite + React ( TypeScript )
     + Rechart ( PieChart, BarChart )
 
-
+Proyecto concluido
