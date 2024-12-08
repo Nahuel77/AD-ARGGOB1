@@ -2,11 +2,14 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import PieChart from './components/PieCharts';
 import BarChart from './components/BarCharts';
-import { YearData, FundsData } from './types';
+import BarChartAlter from './components/BarChartsAlter';
+import { YearData, FundsData, PracticeData, PracticeFunds } from './types';
 
 function App() {
   const [projects, setResultado] = useState<YearData[] | null>(null);
   const [funds, setFunds] = useState<FundsData[] | null>(null);
+  const [practice, setPractice] = useState<PracticeData[] | null>(null);
+  const [practice_f, setPracticeFunds] = useState<PracticeFunds[] | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,6 +28,8 @@ function App() {
         const result = await response.json();
         setResultado(result.projects);
         setFunds(result.funds);
+        setPractice(result.practice);
+        setPracticeFunds(result.practice_f);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -52,7 +57,6 @@ function App() {
         </div>
 
         <div style={{ margin: '0 50px' }}>
-          {/* BarChart */}
           {funds && funds.length > 0 ? (
             <BarChart
               data={funds.map((item) => ({
@@ -60,6 +64,34 @@ function App() {
                 value: item.supplier_contract_amount_usd,
               }))}
               description="Fondos recibidos por año (expresados en millones USD)"
+            />
+          ) : (
+            <p>Cargando datos...</p>
+          )}
+        </div>
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+        <div style={{ margin: '0 50px' }}>
+          {practice && practice.length > 0 ? (
+            <PieChart
+              data={practice.map((item) => ({
+                name: item.procurement_category,
+                value: item.num_projects,
+              }))}
+              description="Cantidad de proyectos por categoría"
+            />
+          ) : (
+            <p>Cargando datos...</p>
+          )}
+        </div>
+        <div style={{ margin: '0 50px' }}>
+          {practice_f && practice_f.length > 0 ? (
+            <BarChartAlter
+              data={practice_f.map((item) => ({
+                name: item.procurement_category,
+                value: item.supplier_contract_amount_usd,
+              }))}
+              description="Fondos recibidos por categoría (expresados en millones USD)"
             />
           ) : (
             <p>Cargando datos...</p>

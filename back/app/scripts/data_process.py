@@ -18,3 +18,21 @@ def data_funds_year(data):
     funds_by_year = df.groupby('fiscal_year')['supplier_contract_amount_usd'].sum().reset_index()
     years = funds_by_year.to_dict(orient='records')
     return years
+
+def data_practice_cate(data):
+    df = pd.DataFrame(data)
+    practice_by_cate = (
+        df.groupby('procurement_category')['project_id']
+        .nunique()
+        .reset_index()
+        .rename(columns={'project_id': 'num_projects'})
+    )
+    cate = practice_by_cate.to_dict(orient='records')
+    return cate
+
+def data_practice_funds(data):
+    df = pd.DataFrame(data)
+    funds_by_practice = df.groupby('procurement_category')['supplier_contract_amount_usd'].sum().reset_index()
+    cate = funds_by_practice.to_dict(orient='records')
+    print(cate)
+    return cate

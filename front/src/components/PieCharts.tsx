@@ -8,13 +8,14 @@ type PieChartProps = {
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#AF19FF', '#FF4567', '#1FC7D4', '#FF6361', '#66C7F4']; // Colores personalizados
 
 const CustomPieChart: React.FC<PieChartProps> = ({ data, description }) => {
+
   return (
     <div style={{ textAlign: 'center', margin: '20px auto' }}>
-      <p style={{ marginTop: '20px', fontSize: '1.5rem', color: '#999' }}>
+      <p style={{ marginTop: '10px', fontSize: '1.5rem', color: '#999' }}>
         {description}
       </p>
       <ResponsiveContainer width="100%" height={450}>
-        <PieChart width={400} height={400}>
+        <PieChart width={450} height={400}>
           <Pie
             data={data}
             dataKey="value"
