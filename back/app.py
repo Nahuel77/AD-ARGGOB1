@@ -1,7 +1,7 @@
 from flask import Flask, jsonify
 from flask_cors import CORS
-from app.scripts.dataAPI import get_data
-from app.scripts.data_process import data_project_year, data_funds_year, data_practice_cate, data_practice_funds
+from src.scripts.dataAPI import get_data
+from src.scripts.data_process import data_project_year, data_funds_year, data_practice_cate, data_practice_funds
 
 app=Flask(__name__)
 CORS(app)
@@ -22,4 +22,4 @@ def dataPOST():
     })
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    app.run()

@@ -34,5 +34,4 @@ def data_practice_funds(data):
     df = pd.DataFrame(data)
     funds_by_practice = df.groupby('procurement_category')['supplier_contract_amount_usd'].sum().reset_index()
     cate = funds_by_practice.to_dict(orient='records')
-    print(cate)
     return cate
