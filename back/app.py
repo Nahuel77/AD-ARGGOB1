@@ -4,7 +4,7 @@ from src.scripts.dataAPI import get_data
 from src.scripts.data_process import data_project_year, data_funds_year, data_practice_cate, data_practice_funds
 
 app=Flask(__name__)
-CORS(app, origins=["https://ad-arggob1.netlify.app/"])
+CORS(app, origins=["https://ad-arggob1.netlify.app"])
 
 @app.route('/dataGET', methods=['GET'])
 def dataPOST():
