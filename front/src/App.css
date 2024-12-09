@@ -4,3 +4,17 @@
   padding: 0;
   text-align: center;
 }
+
+.data-block{
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 768px){
+
+  .data-block{
+    display: flex;
+    flex-direction: column;
+  }
+
+}

@@ -41,7 +41,7 @@ function App() {
     <>
       <h1>Financiamiento de proyectos en Argentina</h1>
       <h2>Inversión de IDA/IBRD y Fondos Fiduciarios relacionados</h2>
-      <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+      <div className='data-block' style={{ justifyContent: 'center', alignItems: 'center' }}>
         <div style={{ margin: '0 50px' }}>
           {projects && projects.length > 0 ? (
             <PieChart
@@ -70,7 +70,7 @@ function App() {
           )}
         </div>
       </div>
-      <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+      <div className='data-block' style={{ justifyContent: 'center', alignItems: 'center' }}>
         <div style={{ margin: '0 50px' }}>
           {practice && practice.length > 0 ? (
             <PieChart
