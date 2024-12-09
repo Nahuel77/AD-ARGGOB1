@@ -14,7 +14,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/dataGET', {
+        const response = await fetch('https://ad-arggob1-14.onrender.com/dataGET', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
