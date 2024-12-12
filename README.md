@@ -23,3 +23,4 @@ Tecnologías usadas:
     + Rechart ( PieChart, BarChart )
 
 Proyecto concluido
+https://ad-arggob1.netlify.app/
