@@ -1,7 +1,7 @@
 # AD-ARGGOB1
 <h1>Análisis de datos sobre la adjudicación de Contratos en financiamiento de proyectos de inversión - Proyectos en Argentina</h1>
 
-https://ad-arggob1.netlify.app/
+Visita el proyecto terminado aqui: https://ad-arggob1.netlify.app/
 
 Proposito general: Mostrar un analisis de datos, realizando diferentes tecnologías.
 
