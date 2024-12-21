@@ -24,5 +24,5 @@ Tecnologías usadas:
     + Vite + React ( TypeScript )
     + Rechart ( PieChart, BarChart )
 
-Proyecto concluido
+Proyecto concluido (El servidor RENDER en el que se ha hosteado el back se apaga luego de periodos de inactividad por ser un servicio gratuito, por lo que probablemente a futuro esta app deje de funcionar con un back hosteado y simplemente sea un front de muestra con datos ya cargados, aun asi el codigo fuente será el mismo)
 https://ad-arggob1.netlify.app/
